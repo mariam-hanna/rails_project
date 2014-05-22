@@ -1,0 +1,7 @@
+<h3>Choose Date</h3>
+
+<form method="post">
+	Checkin date:<input type="date" id="chkin">
+	Checkout date:<input type="date" id="chkout">
+	<input type="submit" id="Search">
+</form>

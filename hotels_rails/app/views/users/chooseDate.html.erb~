@@ -1,0 +1,19 @@
+<h1>Choose Date</h1>
+<a href ='/users'> Back Home </a>
+<form method="post" action="showAvailableRooms">
+	Checkin date:<input type="date" name="chkin"><br>
+	Checkout date:<input type="date" name="chkout"><br>
+	<input type="submit" value="Submit" id="button">
+</form>
+
+<script>
+	var button = document.getElementById('button')
+	var chkin = document.getElementsByName('chkin')[0]
+	var chkout = document.getElementsByName('chkout')[0]
+	button.onclick = function(event) {
+		if (chkout.value == "" | chkin.value == ""){
+        event.preventDefault()
+				alert('Enter all info Please')
+		}
+	}
+</script>

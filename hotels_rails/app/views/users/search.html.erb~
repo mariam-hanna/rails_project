@@ -1,0 +1,8 @@
+<h1>Home Page</h1>
+
+ <ul>
+<% @hotels.each do |hotel| %>
+    <td> <%= hotel.name %> <a href=showRooms/<%= hotel.id %>/chooseDate>book a room</a></td>
+<% end %>
+</ul>
+<br />

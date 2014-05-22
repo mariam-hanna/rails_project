@@ -1,0 +1,15 @@
+<h1>Available Rooms</h1>
+
+<% if !@rooms.empty? %>
+<form method="POST" action="/book">
+<% @rooms.each do |room| %>  	
+	<input type="checkbox" name="room[]" value=<%= room.id %>><%= room.room_price %>$<br>
+    <img src="<%= room.img %>" width="300px" height="200px" ></img><br>  
+<% end %>
+	<br>
+	<input type="submit" value="Book">
+</form>
+<% else %>
+	<p>No rooms are available </p>
+<% end %>
+<br />

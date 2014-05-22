@@ -1,0 +1,40 @@
+<h1>Home Page</h1>
+<% if cookies.has_key?(:user_name) %>
+		<%= cookies[:user_name] %>
+		<%= link_to 'Logout', logout_path %>
+<% else %>
+	<%= link_to 'SignUp', signup_path %>
+	<%= link_to 'SignIn', signin_path %>
+<% end %>
+
+<form method="GET" action="searchByName">
+	Hotel Name:<input type="text" name="hotel_name">
+	<input type="submit" value="Search" id="button2">
+</form>
+
+ <ul>
+<% @hotels.each do |hotel| %>
+    <li> <%= hotel.name %> <a href=showRooms/<%= hotel.id %>>list rooms</a></li>
+<% end %>
+</ul>
+
+<br/>
+
+
+<form method="GET" action="search">
+	City:<input type="text" name="city">
+	Region:<input type="text" name="region">
+	<input type="submit" value="Search" id="button1">
+</form>
+
+<script>
+	var button1 = document.getElementById('button1')
+	var city = document.getElementsByName('city')[0]
+	var region = document.getElementsByName('region')[0]
+	button1.onclick = function(event) {
+		if (city.value == "" | region.value == ""){
+        event.preventDefault()
+				alert('Enter all data Please')
+		}
+	}
+</script>
